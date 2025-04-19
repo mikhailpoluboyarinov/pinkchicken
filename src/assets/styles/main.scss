@@ -1,2 +1,11 @@
 @import "normalize.css";
 @import "variables";
+
+body {
+  background-color: #F5F5F5;
+
+  @media (max-width: $desktop) {
+  background-color: #FFFFFF;
+}
+}
+
