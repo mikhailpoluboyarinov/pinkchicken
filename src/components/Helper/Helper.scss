@@ -3,10 +3,52 @@
 @import "../../assets/styles/variables";
 
 .helper {
-  display: flex;
   min-width: 875px;
   min-height: 709px;
   background-color: $color-white;
   border-radius: 20px;
   box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.08);
+
+  &__header {
+    display: flex;
+    align-items: center;
+    padding-top: 22px;
+  }
+
+  &__title {
+    margin: 0;
+    font-size: 24px;
+    font-weight: 600;
+    padding-left: 27px;
+    margin-top: -7px;
+  }
+
+  &__user-wrapper {
+    display: flex;
+    padding-left: 228px;
+  }
+
+  &__user-name {
+    font-size: 15px;
+    font-weight: 600;
+  }
+
+  &__user-mail {
+    font-size: 15px;
+    font-weight: 400;
+    color: $color-grey-footer;
+    padding-left: 11px;
+  }
+
+  &__button {
+    border: none;
+    background-color: $color-white;
+    padding: 0;
+    padding-left: 24px;
+  }
+
+  &__button-icon {
+    width: 40px;
+    height: 40px;
+  }
 }
