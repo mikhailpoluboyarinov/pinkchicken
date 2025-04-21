@@ -1,0 +1,12 @@
+@import "../../assets/styles/variables";
+
+@import "../../assets/styles/variables";
+
+.helper {
+  display: flex;
+  min-width: 875px;
+  min-height: 709px;
+  background-color: $color-white;
+  border-radius: 20px;
+  box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.08);
+}

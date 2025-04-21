@@ -1,0 +1,10 @@
+@import "../../assets/styles/variables";
+
+.folder {
+  display: flex;
+  min-width: 295px;
+  min-height: 709px;
+  background-color: $color-white;
+  border-radius: 20px;
+  box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.08);
+}
