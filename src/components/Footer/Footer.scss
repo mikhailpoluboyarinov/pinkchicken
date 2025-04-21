@@ -5,12 +5,17 @@
   padding: 28px 0 27px 0;
   font-family: 'Inter', sans-serif;
   color: #555;
+  width: 100%;
+  margin: 0 auto;
 
   &__container {
     display: flex;
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
   }
 
   &__logo-wrapper {
