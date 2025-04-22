@@ -121,6 +121,7 @@
 @media (min-width: $tablet) and (max-width: $desktop) {
   .footer {
     padding: 27px 40px;
+    width: auto;
 
     &__container {
       display: flex;

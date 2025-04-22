@@ -92,6 +92,7 @@
 @media (min-width: $tablet) and (max-width: $desktop)  {
   .header {
     padding: 23px 40px;
+    width: auto;
 
     &__logo {
       width: 209px;

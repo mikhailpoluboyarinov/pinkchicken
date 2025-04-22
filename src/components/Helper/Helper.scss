@@ -234,3 +234,47 @@
     padding-top: 3px;
   }
 }
+
+@media (min-width: $tablet) and (max-width: $small-desktop) {
+  .helper {
+    min-width: 685px;
+
+    &__user-wrapper {
+      padding-left: 45px;
+    }
+
+    &__title {
+      padding-left: 32px;
+      margin-top: -5px;
+    }
+
+    &__chat-wrapper {
+      width: 640px;
+    }
+
+    &__img {
+      padding-top: 45px;
+    }
+
+    &__chat-textarea {
+      width: 616px;
+    }
+
+    &__chat-buttons {
+      padding-top: 45px;
+      padding-left: 23px;
+    }
+
+    &__paragraph {
+      max-width: 370px;
+    }
+
+    &__chat-buttons-wrapper {
+      left: 22px;
+    }
+
+    &__button-enter-wrapper {
+      left: 554px;
+    }
+  }
+}

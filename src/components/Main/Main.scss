@@ -4,9 +4,25 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  gap: 30px;
   min-height: 714px;
   padding-bottom: 57px;
   max-width: 1200px;
   width: 100%;
   margin: 0 auto;
+}
+
+@media (min-width: $small-desktop) and (max-width: $desktop) {
+  .main {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+}
+
+@media (min-width: $tablet) and (max-width: $small-desktop) {
+  .main {
+    flex-direction: column;
+    gap: 21px;
+    padding-bottom: 59px;
+  }
 }
