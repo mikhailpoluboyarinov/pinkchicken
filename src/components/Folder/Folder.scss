@@ -9,6 +9,10 @@
   border-radius: 20px;
   box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.08);
 
+  &__mobile {
+    display: none;
+  }
+
   &__title {
     margin: 0;
     font-size: 24px;
@@ -59,5 +63,11 @@
       padding-top: 107px;
       text-align: left;
     }
+  }
+}
+
+@media (max-width: $mobile) {
+  .folder__mobile--hidden {
+    display: none;
   }
 }

@@ -19,10 +19,18 @@
   }
 }
 
-@media (min-width: $tablet) and (max-width: $small-desktop) {
+@media (min-width: $mobile) and (max-width: $small-desktop) {
   .main {
     flex-direction: column;
     gap: 21px;
     padding-bottom: 59px;
+  }
+}
+
+@media (max-width: $mobile) {
+  .main {
+    flex-direction: column;
+    gap: 21px;
+    padding-bottom: 0;
   }
 }
