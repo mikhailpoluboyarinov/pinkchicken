@@ -151,17 +151,17 @@
   }
 
   &__chat-textarea {
-    width: 794px;
-    height: 115px;
+    width: 100%;
+    height: 143px;
+    border-radius: 20px;
+    font-size: 15px;
     resize: none;
-    padding: 0;
+    line-height: 1.4;
+    box-sizing: border-box;
+    padding: 21px 69px 43px 17px;
     margin-top: 21px;
     border: 2px solid #EBEBEB;
-    border-radius: 20px;
     font-weight: 400;
-    font-size: 15px;
-    padding-top: 25px;
-    padding-left: 20px;
 
     &:focus {
       border-color: $primary-color;
@@ -212,7 +212,7 @@
     display: flex;
     flex-direction: column;
     top: 86px;
-    left: 748px;
+    right: 20px;
   }
 
   &__button-enter {
@@ -267,7 +267,12 @@
     }
 
     &__chat-textarea {
-      width: 616px;
+      width: 100%;
+      height: 142px;
+      padding: 20px 89px 43px 20px;
+      resize: none;
+      line-height: 1.4;
+      box-sizing: border-box;
     }
 
     &__chat-buttons {
@@ -284,7 +289,7 @@
     }
 
     &__button-enter-wrapper {
-      left: 554px;
+      right: 36px;
     }
   }
 }
@@ -322,7 +327,6 @@
     }
 
     &__chat-wrapper {
-      width: 335px;
       height: 632px;
       margin-top: 5px;
       margin-left: 0;
@@ -370,7 +374,13 @@
 
     &__chat-textarea {
       width: 100%;
-      padding-left: 0;
+      height: 146px;
+      box-sizing: border-box;
+      padding: 19px 60px 48px 20px;
+      border-radius: 20px;
+      font-size: 15px;
+      resize: none;
+      line-height: 1.4;
     }
 
     &__span-enter {
@@ -382,8 +392,8 @@
     }
 
     &__button-enter-wrapper {
-      left: 0;
-      right: 0;
+      right: 16px;
+      top: 106px;
     }
   }
 }
