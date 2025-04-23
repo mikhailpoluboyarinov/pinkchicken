@@ -79,6 +79,7 @@
   }
 
   .folder__button {
+    position: relative;
     min-height: 40px;
     border: 1px solid $color-grey-button;
     background-color: $color-grey-button;
@@ -88,11 +89,27 @@
     font-weight: 600;
 
     &:hover {
-      opacity: 0.5;
+      background-color: $color-white;
+      border: 1px solid $secondary-color;
     }
 
-    &:active {
-      opacity: 0.8;
+    &--active {
+      background-color: $color-white;
+      border: 1px solid $primary-color;
+      padding-right: 34px;
+
+      &::after {
+        content: "";
+        position: absolute;
+        right: 10px;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 16px;
+        height: 16px;
+        background-image: url('../../assets/icons/checked.svg');
+        background-repeat: no-repeat;
+        background-size: contain;
+      }
     }
   }
 

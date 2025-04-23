@@ -10,16 +10,33 @@
     </section>
     <section class="folder__mobile">
       <div class="folder__buttons">
-        <button class="folder__button folder__button--active">Медиапланы</button>
-        <button class="folder__button">Отчеты</button>
+        <button
+            class="folder__button"
+            :class="{ 'folder__button--active': activeTab === 'media' }"
+            @click="activeTab = 'media'"
+        >
+          Медиапланы
+        </button>
+        <button
+            class="folder__button"
+            :class="{ 'folder__button--active': activeTab === 'report' }"
+            @click="activeTab = 'report'"
+        >
+          Отчеты
+        </button>
       </div>
     </section>
 </template>
 
 <script>
 export default {
-  name: "Folder"
-}
+  name: "Folder",
+  data() {
+    return {
+      activeTab: 'null'
+    };
+  }
+};
 </script>
 
 <style scoped>
