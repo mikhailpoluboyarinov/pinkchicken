@@ -70,4 +70,38 @@
   .folder__mobile--hidden {
     display: none;
   }
+
+  .folder__mobile {
+    display: flex;
+    align-items: flex-start;
+    width: 100%;
+    padding-left: 37px;
+  }
+
+  .folder__button {
+    min-height: 40px;
+    border: 1px solid $color-grey-button;
+    background-color: $color-grey-button;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 600;
+
+    &:hover {
+      opacity: 0.5;
+    }
+
+    &:active {
+      opacity: 0.8;
+    }
+  }
+
+  .folder__button:first-child {
+    min-width: 115px;
+  }
+
+  .folder__button:last-child {
+    min-width: 78px;
+    margin-left: 13px;
+  }
 }

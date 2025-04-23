@@ -1,23 +1,27 @@
 <template>
-    <section class="helper">
-      <div class="helper__header">
-        <div class="helper__assist">
-          <h1 class="helper__title">
-            Личный помощник
-          </h1>
-          <div class="helper__user-wrapper">
-            <p class="helper__user-name">
-              Jim Davidson
-            </p>
-            <p class="helper__user-mail">
-              Jim Davidson@adaurum.ru
-            </p>
-          </div>
+  <section class="helper" ref="wrapper">
+    <div class="helper__header">
+      <div class="helper__assist">
+        <h1 class="helper__title">Личный помощник</h1>
+        <div class="helper__user-wrapper">
+          <p class="helper__user-name">Jim Davidson</p>
+          <p class="helper__user-mail">Jim Davidson@adaurum.ru</p>
         </div>
-        <button class="helper__button">
+      </div>
+      <div class="helper__popup-wrapper" ref="popupWrapper">
+        <button class="helper__button" ref="button" @click="togglePopup">
           <img class="helper__button-icon" src="../../assets/icons/burger.svg" alt="Кнопка обратной связи">
         </button>
+
+        <div
+            v-if="showPopup"
+            class="helper__popup"
+        >
+          <p class="helper__popup-item" @click="closePopup">Обратная связь о работе сервиса</p>
+          <p class="helper__popup-item" @click="closePopup">Сменить помощника</p>
+        </div>
       </div>
+    </div>
       <div class="helper__main">
         <div class="helper__chat-wrapper">
           <div class="helper__chat-window">
@@ -30,7 +34,7 @@
               <button class="helper__chat-button helper__chat-button--blue">Заказать отчет</button>
             </div>
             <div class="helper__chat-textarea-wrapper">
-              <textarea class="helper__chat-textarea" placeholder="Введите сообщение для администратора"></textarea>
+              <textarea class="helper__chat-textarea" placeholder="Введите сообщение для администратора"  maxlength="200"></textarea>
               <div class="helper__chat-buttons-wrapper">
                 <button class="helper__button-media helper__button-media--left"></button>
                 <button class="helper__button-media helper__button-media--right"></button>
@@ -48,8 +52,43 @@
 
 <script>
 export default {
-  name: "Helper"
-}
+
+  name: "Helper",
+  data() {
+    return {
+      showPopup: false,
+    };
+  },
+
+  methods: {
+    togglePopup() {
+      this.showPopup = !this.showPopup;
+    },
+    closePopup() {
+      this.showPopup = false;
+    },
+    handleClickOutside(event) {
+      const popupWrapper = this.$refs.popupWrapper;
+      const button = this.$refs.button;
+      if (
+          popupWrapper &&
+          !popupWrapper.contains(event.target) &&
+          !button.contains(event.target)
+      ) {
+        this.showPopup = false;
+      }
+    },
+  },
+
+  mounted() {
+    document.addEventListener("click", this.handleClickOutside);
+  },
+
+  unmounted() {
+    document.removeEventListener("click", this.handleClickOutside);
+  },
+};
+
 </script>
 
 <style scoped>
