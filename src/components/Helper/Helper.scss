@@ -257,6 +257,7 @@
     padding: 10px 31px 17px;
     border-radius: 8px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    z-index: 1;
   }
 
   &__popup-item {
@@ -274,6 +275,21 @@
     &:hover {
       color: $primary-color;
     }
+  }
+
+  &__chat-messages {
+    height: 346px;
+    display: flex;
+    flex-direction: column-reverse;
+    overflow-y: auto;
+    gap: 12px;
+  }
+
+  &__chat-time {
+    font-weight: 400;
+    font-size: 15px;
+    color: $color-grey-footer;
+    text-align: center;
   }
 }
 
@@ -315,6 +331,10 @@
     &__chat-buttons {
       padding-top: 45px;
       padding-left: 23px;
+    }
+
+    &__chat-messages {
+      min-height: 342px;
     }
 
     &__paragraph {
@@ -405,6 +425,10 @@
       padding: 0;
       margin-left: -8px;
       margin-top: -16px;
+    }
+
+    &__chat-messages {
+      height: 297px;
     }
 
     &__chat-textarea-wrapper {
