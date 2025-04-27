@@ -92,5 +92,5 @@ export default {
 </script>
 
 <style scoped>
-@import "FolderContent.scss";
+    @import "FolderContent.scss";
 </style>

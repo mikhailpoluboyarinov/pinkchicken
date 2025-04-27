@@ -1,5 +1,43 @@
-# Vue 3 + Vite
+# Project Name
 
-This template should help get you started developing with Vue 3 in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+[**Демо версии проекта**](https://pinkchicken.vercel.app/)
 
-Learn more about IDE Support for Vue in the [Vue Docs Scaling up Guide](https://vuejs.org/guide/scaling-up/tooling.html#ide-support).
+## Описание
+
+Данный проект — это адаптивный веб-интерфейс, который поддерживает различные разрешения экранов и отображается корректно в разных браузерах. Проект использует методологию БЭМ для организации структуры кода, как в HTML, так и в SCSS.
+
+### Основные особенности:
+- Проект разработан на Vue3.
+- Адаптивный интерфейс, подстраивающийся под различные разрешения экранов.
+- Строгая структура кода с использованием методологии БЭМ.
+- Использование SCSS для стилей.
+- Реализованы кликабельные кнопки:
+    - **"Заказать медиаплан"**
+    - **"Заказать отчет"**
+- После отображения медиаплана и отчетов, файлы можно свернуть.
+- Кликабельный попап с обратной связью и сменой помощника.
+- Настроен демо чат. В чат можно отправить сообщение с помощью Enter или кнопки отправить.
+
+### Запуск приложения:
+- Клонируйте проект
+
+   ```bash
+   git clone https://github.com/mikhailpoluboyarinov/pinkchicken.git
+
+- Установите зависимости
+
+   ```bash
+   npm install
+
+-  Запуск проекта
+
+   ```bash
+   npm run dev
+
+-  Локальный адрес http://localhost:5175/ 
+
+
+### Проект выполнил Полубояринов Михаил
+
+
+

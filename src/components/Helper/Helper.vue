@@ -128,23 +128,32 @@ export default {
     // то пушу сначала сообщение админа, а потом уже свое с задержкой в 0.2. Эта ф-я для наглядности,
     // чтобы показать, что макет работает.
 
-    sendMessage() {
+    async sendMessage() {
       if (this.message.trim() !== '') {
-        const userMessage = { text: this.message.trim(), isUser: true };
+        const userText = this.message.trim();
         this.message = '';
 
-        this.messages.push({
-          text: 'Lörem ipsum suparad pepött då satsig och soskap metrosocial.' +
-              ' Sapongar trenåvis i hypol innan visiskap, heterovybelt.' +
-              ' Besav ditugen stenosade om exopagt.',
-          isUser: false
+        // Имитируем асинхронный запрос на сервер за ответом администратора
+        const adminResponse = await new Promise(resolve => {
+          setTimeout(() => {
+            resolve(
+                'Lörem ipsum suparad pepött då satsig och soskap metrosocial.' +
+                ' Sapongar trenåvis i hypol innan visiskap, heterovybelt.' +
+                ' Besav ditugen stenosade om exopagt.'
+            );
+          }, 300);
         });
 
+        // Сначала пушим сообщение администратора
+        this.messages.push({ text: adminResponse, isUser: false });
+
+        // Затем через 200 мс — сообщение пользователя
         setTimeout(() => {
-          this.messages.push(userMessage);
+          this.messages.push({ text: userText, isUser: true });
         }, 200);
       }
     },
+
 
 
     handleKeyDown(event) {

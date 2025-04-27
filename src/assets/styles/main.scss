@@ -1,6 +1,6 @@
-@import "normalize.css";
-@import "variables";
-@import "base";
+@use "normalize.css" as *;
+@use "variables" as *;
+@use "base" as *;
 
 body {
   background-color: #F5F5F5;
@@ -12,4 +12,3 @@ body {
   background-color: #FFFFFF;
 }
 }
-
