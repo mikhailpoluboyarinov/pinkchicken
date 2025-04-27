@@ -26,26 +26,19 @@ export default {
   },
   methods: {
     // Диспетчер для загрузки данных
-    fetchDataFromServer(type) {
+    async fetchDataFromServer(type) {
       if (type === 'mediaplan') {
-        this.fetchMediaPlans();
+        await this.fetchData(mediaPlansMock, 'mediaPlansData');
       } else if (type === 'report') {
-        this.fetchReports();
+        await this.fetchData(reportsMock, 'reportsData');
       }
     },
 
-    // Функция для загрузки медиапланов
-    fetchMediaPlans() {
-      const { data, fetchData } = useFetchData(mediaPlansMock);
-      this.mediaPlansData = data;
-      fetchData();
-    },
-
-    // Функция для загрузки отчетов
-    fetchReports() {
-      const { data, fetchData } = useFetchData(reportsMock);
-      this.reportsData = data;
-      fetchData();
+    // Ф-я для загрузки данных
+    async fetchData(mockData, dataKey) {
+      const { data, fetchData } = useFetchData(mockData);
+      this[dataKey] = data;
+      await fetchData();
     },
   },
 };

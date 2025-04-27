@@ -283,6 +283,15 @@
     flex-direction: column-reverse;
     overflow-y: auto;
     gap: 12px;
+
+    &::-webkit-scrollbar {
+      width: 4px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background-color: $color-grey;
+      border-radius: 4px;
+    }
   }
 
   &__chat-time {

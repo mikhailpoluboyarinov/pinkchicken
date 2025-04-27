@@ -11,7 +11,7 @@
         </p>
       </div>
 
-      <div v-else>
+      <div v-else class="folder__folder-content">
         <FolderContent title="Медиапланы" :items="mediaPlans" />
         <FolderContent title="Отчеты" :items="reports" />
       </div>
