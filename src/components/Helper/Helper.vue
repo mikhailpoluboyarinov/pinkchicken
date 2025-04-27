@@ -43,9 +43,20 @@
             </div>
 
             <div class="helper__chat-buttons">
-              <button class="helper__chat-button helper__chat-button--pink">Заказать медиаплан</button>
-              <button class="helper__chat-button helper__chat-button--blue">Заказать отчет</button>
+              <button
+                  class="helper__chat-button helper__chat-button--pink"
+                  @click="requestMediaPlan"
+              >
+                Заказать медиаплан
+              </button>
+              <button
+                  class="helper__chat-button helper__chat-button--blue"
+                  @click="requestReport"
+              >
+                Заказать отчет
+              </button>
             </div>
+
             <div class="helper__chat-textarea-wrapper">
               <textarea
                   class="helper__chat-textarea"
@@ -74,6 +85,8 @@ import ChatMessage from '../ChatMessage/ChatMessage.vue';
 export default {
 
   components: { ChatMessage },
+
+  emits: ['fetch-data'],
 
   name: "Helper",
   data() {
@@ -139,7 +152,18 @@ export default {
         event.preventDefault();
         this.sendMessage();
       }
-    }
+    },
+
+    //Добавляю методы кнопкам для медиаплана и отчетов
+
+    requestMediaPlan() {
+      this.$emit('fetch-data', 'mediaplan');
+    },
+
+    requestReport() {
+      this.$emit('fetch-data', 'report');
+    },
+
   },
 
   //Монтирую и размонтирую обработчик клика вне окна попапа
@@ -152,6 +176,7 @@ export default {
     document.removeEventListener("click", this.handleClickOutside);
   },
 };
+
 </script>
 
 <style scoped>

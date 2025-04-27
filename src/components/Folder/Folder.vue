@@ -3,10 +3,19 @@
       <h1 class="folder__title">
         Файлы
       </h1>
-      <div class="folder__wrapper">
-        <img class="folder__img" src="../../assets/images/folder.png">
-        <p class="folder__paragraph">Закажи у личного помощника медиаплан. Он появится в этом разделе</p>
+
+      <div v-if="mediaPlans.length === 0 && reports.length === 0" class="folder__wrapper">
+        <img class="folder__img" src="../../assets/images/folder.png" />
+        <p class="folder__paragraph">
+          Закажи у личного помощника медиаплан. Он появится в этом разделе
+        </p>
       </div>
+
+      <div v-else>
+        <FolderContent title="Медиапланы" :items="mediaPlans" />
+        <FolderContent title="Отчеты" :items="reports" />
+      </div>
+
     </section>
     <section class="folder__mobile">
       <div class="folder__buttons">
@@ -29,15 +38,29 @@
 </template>
 
 <script>
+import FolderContent from "../FolderContent/FolderContent.vue";
+
 export default {
-  name: "Folder",
+  name: 'Folder',
+  components: {FolderContent},
+  props: {
+    mediaPlans: {
+      type: Array,
+      default: () => [],
+    },
+    reports: {
+      type: Array,
+      default: () => [],
+    },
+  },
   data() {
     return {
-      activeTab: 'null'
+      activeTab: null,
     };
-  }
+  },
 };
 </script>
+
 
 <style scoped>
     @import "Folder.scss";
