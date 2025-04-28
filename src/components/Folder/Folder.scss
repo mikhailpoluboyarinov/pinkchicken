@@ -95,7 +95,8 @@
     display: flex;
     align-items: flex-start;
     width: 100%;
-    padding-left: 37px;
+    box-sizing: border-box;
+    padding-left: 20px;
   }
 
   .folder__button {
